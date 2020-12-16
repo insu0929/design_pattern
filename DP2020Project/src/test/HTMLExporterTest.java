@@ -1,5 +1,6 @@
 package test;
 
+//implemented by YIS
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
@@ -14,7 +15,11 @@ import org.junit.jupiter.api.Test;
 import com.holub.database.HTMLExporter;
 import com.holub.database.Table;
 import com.holub.database.TableFactory;
-
+/**
+ * MUST Implementation #1:  HTML Exporter 개발 빌더 패턴이 적용된 기존 exporter 클래스를 참고하여 HTML
+exporter 를 개발
+ * This class is a test class for junit testing for implementation #1
+ * **/
 public class HTMLExporterTest {
 
 	Table table1;
@@ -35,8 +40,8 @@ public class HTMLExporterTest {
 		col = new String[] {"test1", "test1", "1"};
 		table1 = TableFactory.create("name", col);
 		table1.insert(row);
-		testResult1 = "<!DOCTYPE html>\r\n" + 
-				"<html>\r\n";
+		testResult1 =  "<!DOCTYPE html>\r\n" + 
+				"<html>\n";
 		
 		testResult2 = "<!DOCTYPE html>\r\n" + 
 				"<html>\r\n" + 

@@ -303,8 +303,9 @@ public final class Database
 			try
 			{	Table desiredTable = (Table) realMap.get(tableName);
 				if( desiredTable == null )
-				{	desiredTable = TableFactory.load(
-									tableName + ".csv",location);
+				{	//desiredTable = TableFactory.load(
+									//tableName + ".csv",location);
+					desiredTable = TableFactory.load(tableName + ".xml", location);
 					put(tableName, desiredTable);
 				}
 				return desiredTable;
@@ -576,18 +577,20 @@ public final class Database
 		{	for( Iterator i = values.iterator(); i.hasNext(); )
 			{	Table current = (Table ) i.next();
 				if( current.isDirty() ) {
-//					Writer out =
-//						new FileWriter(
-//								new File(location, current.name() + ".csv"));
-//					current.export( new CSVExporter(out) );
 					
-//					Writer out = new FileWriter(new File(location, current.name() + ".html"));
-//					current.export(new HTMLExporter(out));
-//					out.close();
 					
-					Writer out = new FileWriter(new File(location, current.name() + ".xml"));
-					current.export(new HTMLExporter(out));
-					out.close();
+					Writer out1 =
+						new FileWriter(
+								new File(location, current.name() + ".csv"));
+					current.export( new CSVExporter(out1) );
+					
+					Writer out2 = new FileWriter(new File(location, current.name() + ".html"));
+					current.export(new HTMLExporter(out2));
+					out2.close();
+					
+					Writer out3 = new FileWriter(new File(location, current.name() + ".xml"));
+					current.export(new XMLExporter(out3));
+					out3.close();
 				}
 			}
 		}

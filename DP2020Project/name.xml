@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>name</title>
-	</head>
-	<body>
-		<table>
-			<tbody>
-				<tr><td>first</td><td>last</td><td>addrId</tr>
-				<tr><td>Fred</td><td>Flintstone</td><td>1</tr>
-				<tr><td>Wilma</td><td>Flintstone</td><td>1</tr>
-				<tr><td>Allen</td><td>Holub</td><td>0</tr>
-			</tbody>
-		</table>
-	</body>
-</html>
+<?xml version="1.0"?>
+<root>
+	<table name="name">
+	<row>
+		<first>Fred</first>
+		<last>Flintstone</last>
+		<addrId>1</addrId>
+	</row>
+	<row>
+		<first>Wilma</first>
+		<last>Flintstone</last>
+		<addrId>1</addrId>
+	</row>
+	<row>
+		<first>Allen</first>
+		<last>Holub</last>
+		<addrId>0</addrId>
+	</row>
+	</table>
+</root>

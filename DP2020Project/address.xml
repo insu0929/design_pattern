@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>address</title>
-	</head>
-	<body>
-		<table>
-			<tbody>
-				<tr><td>addrId</td><td>street</td><td>city</td><td>state</td><td>zip</tr>
-				<tr><td>0</td><td>12 MyStreet</td><td>Berkeley</td><td>CA</td><td>99998</tr>
-				<tr><td>1</td><td>34 Quarry Ln.</td><td>Bedrock</td><td>AZ</td><td>00000</tr>
-			</tbody>
-		</table>
-	</body>
-</html>
+<?xml version="1.0"?>
+<root>
+	<table name="address">
+	<row>
+		<addrId>0</addrId>
+		<street>12 MyStreet</street>
+		<city>Berkeley</city>
+		<state>CA</state>
+		<zip>99998</zip>
+	</row>
+	<row>
+		<addrId>1</addrId>
+		<street>34 Quarry Ln.</street>
+		<city>Bedrock</city>
+		<state>AZ</state>
+		<zip>00000</zip>
+	</row>
+	</table>
+</root>

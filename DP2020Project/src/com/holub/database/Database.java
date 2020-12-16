@@ -581,7 +581,11 @@ public final class Database
 //								new File(location, current.name() + ".csv"));
 //					current.export( new CSVExporter(out) );
 					
-					Writer out = new FileWriter(new File(location, current.name() + ".html"));
+//					Writer out = new FileWriter(new File(location, current.name() + ".html"));
+//					current.export(new HTMLExporter(out));
+//					out.close();
+					
+					Writer out = new FileWriter(new File(location, current.name() + ".xml"));
 					current.export(new HTMLExporter(out));
 					out.close();
 				}

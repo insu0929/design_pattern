@@ -48,7 +48,7 @@ import com.holub.tools.ArrayIterator;
  * @include /etc/license.txt
  */
 
-/* package */ class ConcreteTable implements Table {
+/* package */ public class ConcreteTable implements Table {
 	// Supporting clone() complicates the following declarations. In
 	// particular, the fields can't be final because they're modified
 	// in the clone() method. Also, the rows field has to be declared
@@ -449,6 +449,21 @@ import com.holub.tools.ArrayIterator;
 
 		if (otherTables == null || otherTables.length == 0)
 			return select(where, requestedColumns);
+		
+		/*select * & join error fix code by YIS*/
+		
+		if(requestedColumns == null) {
+			Set<String> joinedColumns = new HashSet<String>(); //newly joined table columns
+			for(String col : columnNames) {
+				joinedColumns.add(col);
+			}
+			for(int i = 0; i < otherTables.length; i++) {
+				for(int j = 0; j < otherTables[i].rows().columnCount(); j++) {
+					joinedColumns.add(otherTables[i].rows().columnName(j));
+				}
+			}
+			requestedColumns = (String[])joinedColumns.toArray(new String[joinedColumns.size()]);
+		}
 
 		// Make the current table not be a special case by effectively
 		// prefixing it to the otherTables array.
